@@ -1,0 +1,21 @@
+{
+  "name": "kids-coding-challenge",
+  "version": "1.0.0",
+  "description": "少儿编程闯关题库系统",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w server && npm run build -w client",
+    "start": "npm run start -w server",
+    "install:all": "npm install && npm install -w server && npm install -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
